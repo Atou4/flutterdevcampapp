@@ -26,8 +26,7 @@ class DestinationsList extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           final city = cities[index];
           return DetinationWidget(
-            cityname: city.cityName,
-            imgpath: city.cityImage,
+            city: city, index: index,
           );
         },
       ),
