@@ -1,0 +1,51 @@
+[
+  {
+    "dishimage": "https://img.freepik.com/free-photo/zucchini-fritters-with-yogurt-sauce-isolated-white-background_123827-22295.jpg?w=740&t=st=1664130906~exp=1664131506~hmac=325b3dcd31139d529ac9bc8c39bea1c9f2b3456947c8182857da39f3302a2f1a",
+    "dishname": "Zucchini fritters",
+    "timetomake": 30,
+    "servings": 2,
+    "calories": 455,
+    "reviews": 200,
+    "color": "orange",
+    "ingredients": [
+      "4 cups shredded zucchini",
+      "2/3 cup all-purpose flour",
+      "2 large eggs, lightly beaten",
+      "1/3 cup sliced scallions (green and white parts)",
+      "2 Tablespoons olive oil",
+      "Sour cream, for serving (optional)",
+      "1/2 tsp ground black pepper"
+    ],
+    "directions": [
+      "Wash zucchini and trim off ends. Grate on the large holes of a box grater or use the grater attachment for the food processor. Place zucchini in a large mixing bowl, stir in 1 tsp salt, and set aside for 10 minutes.",
+      "After 10 minutes, squeeze handfuls of zucchini tightly over the sink to remove extra water. It helps to wring it out in a cheesecloth if you have one. It is impressive how much water comes out! You should end up with 3 1/2 to 4 cups of squeezed dry zucchini. Transfer to a large mixing bowl.",
+      "Add 1/2 cups chopped green onion and 2 lightly beaten eggs."
+    ]
+  },
+  {
+    "dishimage": "https://img.freepik.com/free-photo/spaghetti-with-vegetablesbroccolitomatoespeppers-isolated-white-background_123827-21345.jpg?w=740&t=st=1664130922~exp=1664131522~hmac=91a5e6019e56f2a770f29d2dd705961e7ef05688f3df51bae623e0926b0901fe",
+    "dishname": "Spaghetti",
+    "timetomake": 35,
+    "servings": 4,
+    "calories": 512,
+    "reviews": 112,
+    "color": "blueAccent",
+    "ingredients": [
+      "12 ounces spaghetti or pasta of choic",
+      "4 tablespoons olive oil",
+      "1 cup (140 grams) chopped onion",
+      "2 medium zucchini, chopped (1/2 pound)",
+      "2 medium yellow squash, chopped (1/2 pound)",
+      "3 garlic cloves, minced (1 tablespoon)",
+      "1/2 teaspoon dried oregano",
+      "1/4 teaspoon red pepper flakes",
+      "5 cups (1/2 pound) spinach leaves"
+    ],
+    "directions": [
+      "Heat olive oil in a wide skillet with sides over medium heat. Add onion and cook, stirring occasionally until translucent; 3 to 5 minutes.",
+      "Add zucchini, yellow squash, garlic, oregano, red pepper flakes, and a generous pinch of salt then cook, stirring occasionally until softened but still with some crunch; 5 to 8 minutes. Stir in the tomato paste and cook another minute. (When making this sauce, we usually end up using between 1 and 1 1/2 teaspoons of fine sea salt.)",
+      "While the sauce simmers, bring a large pot of salted water to the boil then cook pasta according to package directions.",
+      "Add canned whole tomatoes and break them up a bit with a spoon. You want the sauce to be chunky."
+    ]
+  }
+]
