@@ -6,7 +6,7 @@
     "servings": 2,
     "calories": 455,
     "reviews": 200,
-    "color": "orange",
+    "color": "0xffFFA500",
     "ingredients": [
       "4 cups shredded zucchini",
       "2/3 cup all-purpose flour",
@@ -29,7 +29,7 @@
     "servings": 4,
     "calories": 512,
     "reviews": 112,
-    "color": "blueAccent",
+    "color": "0xff4CAEE3",
     "ingredients": [
       "12 ounces spaghetti or pasta of choic",
       "4 tablespoons olive oil",

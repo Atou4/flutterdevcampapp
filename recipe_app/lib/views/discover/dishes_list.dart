@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
-import 'package:test_app/models/place.dart';
+import 'package:recipe_app/widgets/dish_widget.dart.dart';
 
-import '../../widgets/place_widget.dart';
-class Placeslist extends StatelessWidget {
-  final List<Place> places;
-  const Placeslist({Key? key, required this.places}) : super(key: key);
+import '../../models/dish.dart';
+class Disheslist extends StatelessWidget {
+  final List<Dish> dishes;
+  const Disheslist({Key? key, required this.dishes}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +16,10 @@ class Placeslist extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        itemCount: places.length,
+        itemCount: dishes.length,
         itemBuilder: (BuildContext context, int index) {
-              final place = places[index];
-              return Placewidget(place: place, index: index,);
+              final dish = dishes[index];
+              return  DishWidget(dish: dish, index: index,);
             },
       )
     );

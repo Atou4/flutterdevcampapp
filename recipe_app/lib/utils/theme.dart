@@ -11,23 +11,23 @@ class Apptheme {
     colorScheme: const ColorScheme.light(),
   );
   static final lightTheme = ThemeData(
-    scaffoldBackgroundColor: AppColors.white,
+    scaffoldBackgroundColor: AppColors.backgroundblue,
     colorScheme: const ColorScheme.dark(),
     textTheme: TextTheme(
       headline4: GoogleFonts.openSans(
-          fontSize: 30, fontWeight: FontWeight.w400, letterSpacing: 0.25),
+          fontSize: 28, fontWeight: FontWeight.w800,color: AppColors.white),
       headline5: GoogleFonts.openSans(
-          fontSize: 22, fontWeight: FontWeight.w400, color: AppColors.black),
+          fontSize: 22, fontWeight: FontWeight.w400, color: AppColors.white,letterSpacing: 0.5,),
       headline6: GoogleFonts.openSans(
           fontSize: 20,
           fontWeight: FontWeight.w500,
           letterSpacing: 0.15,
-          color: AppColors.black),
+          color: AppColors.white),
       subtitle1: GoogleFonts.openSans(
           fontSize: 16,
           fontWeight: FontWeight.w400,
           letterSpacing: 0.15,
-          color: AppColors.black),
+          color: AppColors.white),
       subtitle2: GoogleFonts.openSans(
           fontSize: 14,
           fontWeight: FontWeight.w500,
@@ -37,31 +37,31 @@ class Apptheme {
           fontSize: 18,
           fontWeight: FontWeight.w400,
           letterSpacing: 0.5,
-          color: AppColors.black),
+          color: AppColors.white),
       bodyText2: GoogleFonts.openSans(
           fontSize: 14,
           fontWeight: FontWeight.w400,
           letterSpacing: 0.25,
-          color: AppColors.black),
+          color: AppColors.white),
       button: GoogleFonts.openSans(
-          fontSize: 16,
+          fontSize: 14,
           fontWeight: FontWeight.w500,
-          letterSpacing: 1.25,
-          color: AppColors.black),
+          letterSpacing: 0.5,
+          color: AppColors.white),
       caption: GoogleFonts.openSans(
           fontSize: 12,
           fontWeight: FontWeight.w400,
           letterSpacing: 0.4,
-          color: AppColors.black),
+          color: AppColors.white),
       overline: GoogleFonts.openSans(
           fontSize: 10,
           fontWeight: FontWeight.w400,
           letterSpacing: 1.5,
-          color: AppColors.black),
+          color: AppColors.white),
     ),
     appBarTheme: AppBarTheme(
-      backgroundColor: AppColors.midnightblue,
-      elevation: 1,
+      backgroundColor: AppColors.backgroundblue,
+      elevation: 0,
       toolbarTextStyle:GoogleFonts.openSans(
           fontSize: 20,
           fontWeight: FontWeight.w500,
@@ -74,15 +74,15 @@ class Apptheme {
           color: AppColors.white),
       centerTitle: true,
     ),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    bottomNavigationBarTheme:  const BottomNavigationBarThemeData(
       //selectedIconTheme: IconThemeData(size: 30),
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.backgroundblue,
       type: BottomNavigationBarType.fixed,
-      elevation: 12.0,
-      selectedItemColor: AppColors.midnightblue,
-      unselectedItemColor: AppColors.darkgrey,
-      selectedLabelStyle: TextStyle(color: AppColors.midnightblue, height: 1),
-      unselectedLabelStyle: TextStyle(color: AppColors.grey, height: 1),
+      elevation: 5.0,
+      selectedItemColor: AppColors.white,
+      unselectedItemColor: AppColors.white,
+      selectedLabelStyle:TextStyle(color: AppColors.backgroundblue, height: 1),
+      unselectedLabelStyle:TextStyle(color: AppColors.grey, height: 1),
     ),
   );
 }

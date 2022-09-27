@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:recipe_app/utils/theme.dart';
-import 'package:recipe_app/views/discover/discover_screen.dart';
+import 'package:recipe_app/views/bottom_nav.dart';
 
 
 void main() async {
@@ -28,7 +28,7 @@ class _AppState extends State<App> {
           debugShowCheckedModeBanner: false,
           title: 'Recipe app',
           theme: Apptheme.lightTheme,
-          home: const DiscoverPage()
+          home: const BottomNav()
           );
 
   }
