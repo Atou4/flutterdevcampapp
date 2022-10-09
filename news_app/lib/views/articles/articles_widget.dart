@@ -1,98 +1,106 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../utils/colors.dart';
 
 class Articleswidget extends StatelessWidget {
+  final int index;
   final String title;
-  const Articleswidget({
-    Key? key,
-    required this.title,
-  }) : super(key: key);
+  final String? urlToImage;
+  final String publishedAt;
+  final String url;
+  final String? author;
+  const Articleswidget(
+      {Key? key,
+      required this.url,
+      required this.index,
+      required this.title,
+      required this.urlToImage,
+      required this.publishedAt,
+      required this.author})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        ClipRRect(
-          borderRadius: const BorderRadius.all(
-            Radius.circular(25),
-          ),
-          child: Image.network(
-            "https://img.freepik.com/premium-photo/colorful-hot-air-balloons-before-launch-goreme-national-park-cappadocia-turkey_87498-239.jpg?w=1380",
-            fit: BoxFit.fill,
-            height: 80,
-            width: 80,
-          ),
-        ),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Biden called saudi arabia idk what",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2!
-                      .copyWith(fontWeight: FontWeight.bold),
-                  overflow: TextOverflow.clip,
-                  maxLines: 2,
-                ),
-                const SizedBox(
-                height: 10,
+    final size = MediaQuery.of(context).size;
+    final Uri articleurl = Uri.parse(url);
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: GestureDetector(
+        onTap: () async {
+          if (await canLaunchUrl(articleurl)) {
+            await launchUrl(articleurl);
+          } else {
+            throw 'Could not launch $url';
+          }
+        },
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.all(
+                Radius.circular(25),
               ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        const Icon(
-                          CupertinoIcons.time,
-                          color: AppColors.grey,
-                          size: 15,
-                        ),
-                        
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      "4 hours ago",
-                      style: Theme.of(context)
-                          .textTheme
-                          .caption!
-                          .copyWith(color: AppColors.grey),
-                    ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Icon(
-                      CupertinoIcons.person,
-                      color: AppColors.grey,
-                      size: 15,
-                    ),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      "By adil rau",
-                      style: Theme.of(context)
-                          .textTheme
-                          .caption!
-                          .copyWith(color: AppColors.grey),
-                    ),
-                      ],
-                    ),
-                    
-                  ],
+              child: CachedNetworkImage(
+                imageUrl: urlToImage.toString(),
+                placeholder: (context, url) => const Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.black,
+                  ),
                 ),
-              ],
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+                fit: BoxFit.cover,
+                height: 80,
+                width: 80,
+              ),
             ),
-          ),
-        )
-      ],
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: size.width * 0.5,
+                    child: Text(
+                      title,
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText2!
+                          .copyWith(fontWeight: FontWeight.bold),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Icon(
+                        CupertinoIcons.time,
+                        color: AppColors.grey,
+                        size: 15,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        publishedAt.substring(0, 10),
+                        style: Theme.of(context)
+                            .textTheme
+                            .caption!
+                            .copyWith(color: AppColors.grey),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

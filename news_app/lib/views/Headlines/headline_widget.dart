@@ -1,10 +1,21 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/utils/colors.dart';
 
 class HeadlineWidget extends StatelessWidget {
   final int index;
-  const HeadlineWidget({Key? key, required this.index}) : super(key: key);
+  final String title;
+  final String? urlToImage;
+  final String publishedAt;
+  final String? author;
+  const HeadlineWidget(
+      {Key? key,
+      required this.index,
+      required this.title,
+      required this.urlToImage,
+      required this.publishedAt,
+      required this.author})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +29,19 @@ class HeadlineWidget extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(25)),
-                child: Image.network(
-                  "https://img.freepik.com/premium-photo/colorful-hot-air-balloons-before-launch-goreme-national-park-cappadocia-turkey_87498-239.jpg?w=1380",
-                  fit: BoxFit.fill,
+                child: 
+                CachedNetworkImage(
+              imageUrl: urlToImage.toString(),
+              placeholder: (context, url) =>const Center(
+                child:  CircularProgressIndicator(
+                  color: AppColors.black,
+                ),
+              ),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+               fit: BoxFit.cover,
                   height: 125,
                   width: size.width * 0.5,
-                ),
+            ),
               ),
               SizedBox(
                 height: size.height * 0.01,
@@ -31,20 +49,29 @@ class HeadlineWidget extends StatelessWidget {
               SizedBox(
                 width: size.width * 0.5,
                 child: Text(
-                  "Biden called saudi arabia idk what",
-                  style: Theme.of(context).textTheme.bodyText2!.copyWith(fontWeight: FontWeight.bold),
+                  title,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2!
+                      .copyWith(fontWeight: FontWeight.bold),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
                 ),
               ),
               Text(
-                  "4 hours ago",
-                  style: Theme.of(context).textTheme.caption!.copyWith(color: AppColors.grey),
-                ),
-               Text(
-                  "By David e.Sange",
-                  style: Theme.of(context).textTheme.caption!.copyWith(color: AppColors.grey),
-                ), 
+                publishedAt.substring(0, 10),
+                style: Theme.of(context)
+                    .textTheme
+                    .caption!
+                    .copyWith(color: AppColors.grey),
+              ),
+              Text(
+                "By $author",
+                style: Theme.of(context)
+                    .textTheme
+                    .caption!
+                    .copyWith(color: AppColors.grey),
+              ),
             ],
           ),
         ));

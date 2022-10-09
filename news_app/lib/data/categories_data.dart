@@ -10,11 +10,12 @@ List<CategorieModel> getCategories(){
   categorieModel.categorieName = "Business";
   myCategories.add(categorieModel);
 
-  //2
+  //
+  /*
   categorieModel =  CategorieModel();
   categorieModel.categorieName = "Entertainment";
   myCategories.add(categorieModel);
-
+  */
   //3
   categorieModel =  CategorieModel();
   categorieModel.categorieName = "General";

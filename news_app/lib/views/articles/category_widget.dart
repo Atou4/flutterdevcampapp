@@ -10,6 +10,7 @@ class Categorytab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+          margin: const EdgeInsets.only(right: 20),
           width: 120,
           decoration: BoxDecoration(
             color: AppColors.white,
@@ -17,8 +18,7 @@ class Categorytab extends StatelessWidget {
             borderRadius: BorderRadius.circular(25.0),
             border: Border.all(width: 1, color: AppColors.darkgrey),
           ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
+          child: Center(
             child: Text(
              title, 
               style: Theme.of(context).textTheme.headline6,

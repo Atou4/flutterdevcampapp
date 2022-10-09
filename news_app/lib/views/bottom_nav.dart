@@ -25,6 +25,7 @@ class _BottomNav extends State<BottomNav> {
     final List<Widget> pages = [
       const Homepage(),
       const Discoverpage(),
+      const Discoverpage(),
     ];
     return Scaffold(
       body: pages[_currentIndex],
